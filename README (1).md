@@ -2,8 +2,6 @@
 
 **ID: V25HE11M13** — LPC2129/LPC2148 · Embedded C · Keil uVision + Flash Magic
 
-![Hardware block diagram](hardware_block_diagram.svg)
-
 ## Aim
 
 To develop a menu-driven RTC configuration and scheduled device control
