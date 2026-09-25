@@ -38,8 +38,8 @@
 
 /*------------------------- device output ---------------------------*/
 #define DEVICE_PIN      4          /* P0.4 drives the device LED     */
-#define DEVICE_ON()     SSETBIT(IOSET0, DEVICE_PIN)
-#define DEVICE_OFF()    SSETBIT(IOCLR0, DEVICE_PIN)
+#define DEVICE_ON()     SSETBIT(IOCLR0, DEVICE_PIN)   /* active LOW */
+#define DEVICE_OFF()    SSETBIT(IOSET0, DEVICE_PIN)
 
 /*------------------------- timeouts (ms) ---------------------------*/
 #define MENU_TIMEOUT    10000UL    /* menu closes if no key pressed  */
