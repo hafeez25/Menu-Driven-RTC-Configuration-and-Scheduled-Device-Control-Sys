@@ -10,7 +10,7 @@
 		LCD RS/RW/EN P0.16 / P0.17 / P0.18
 		Keypad rows  P1.16 - P1.19      columns P1.20 - P1.23
 		Config SW    P0.1  (EINT0, active low)
-		Device LED   P0.4  (active high)
+		Device LED   P0.4  (active low)
 
 	Where each project requirement is met:
 		1. RTC info on LCD .......... ShowStatus()
