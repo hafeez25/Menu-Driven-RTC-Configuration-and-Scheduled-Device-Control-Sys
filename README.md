@@ -19,6 +19,7 @@
 > `types.h` once, before the rest, exactly like your class files do.
 
 ## Hardware connections
+<img width="850" height="612" alt="image" src="https://github.com/user-attachments/assets/16984f41-93bc-47d2-aa41-6dfe4f66b6b2" />
 
 | Signal | Pins |
 |---|---|
