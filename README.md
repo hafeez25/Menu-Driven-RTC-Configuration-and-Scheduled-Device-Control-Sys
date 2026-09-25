@@ -63,8 +63,8 @@ a single-digit entry early.
 4. **Option 1 (RTC)** first asks for a **4-digit PIN** (default `1234`,
    changeable in `main.c` via `#define RTC_PIN`). Get it right and you move on
    to hour, minute, second, day, date, month, year:
-   - Day of week is prompted as `(0SUN...6SAT)DAY`, range 0–6.
-   - Year is prompted as `(2000-2030)YEAR`, range restricted to 2000–2030.
+   - Day of week is prompted as `DAY(0SUN...6SAT)`, range 0–6.
+   - Year is prompted as `YEAR(2000-2030)`, range restricted to 2000–2030.
    - Each field is range-checked; the date is re-checked against the chosen
      month and year, so 29 February is only accepted in a leap year.
    - Enter the PIN wrong **3 times in a row** and RTC editing **locks for
