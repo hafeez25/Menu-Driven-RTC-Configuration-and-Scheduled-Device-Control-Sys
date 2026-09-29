@@ -82,10 +82,10 @@ system on the LPC2148, with PIN-protected access to the clock settings.
 
 Two reference diagrams for this project:
 - **Block diagram** — functional view: power, MCU core, input, output, flash storage
-  <img width="2232" height="1356" alt="image" src="https://github.com/user-attachments/assets/d190f319-ac4c-4fba-ad5f-f8152153c2ff" />
+<img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/aa65790f-a4a8-438b-8a1f-65618fe217da" />
+
 
 - **Circuit diagram** — pin-level view: LPC2148 to LCD, keypad, switch, device
-  <img width="1600" height="1045" alt="WhatsApp Image 2026-09-29 at 8 39 01 PM" src="https://github.com/user-attachments/assets/27253416-1344-41d5-9018-4edbecfc2525" />
 
 
 
@@ -140,11 +140,11 @@ Two reference diagrams for this project:
 | P0.16 | RS |
 | P0.17 | RW |
 | P0.18 | EN |
-| +5 V | VCC (pin 2), backlight A (pin 15, through ~150 Ω if needed) |
-| GND | VSS (pin 1), backlight K (pin 16) |
-| Pot wiper | V0 / contrast (pin 3) |
 
 ### 2. 4×4 matrix keypad
+
+<img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/8ee54aa3-f250-4cf8-97d5-c9698150a2c3" />
+
 
 | LPC2148 | Keypad |
 |---|---|
@@ -153,22 +153,26 @@ Two reference diagrams for this project:
 
 ### 3. Device output (active LOW)
 
-```
-Relay module VCC → +5 V        LED option:
-Relay module GND → GND         P0.4 ──[330 Ω]──►|── GND
-Relay module IN  → P0.4        (lights when P0.4 = LOW)
-```
+<img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/ce52baa9-1f85-463e-8afe-f3e2b5559634" />
+
+
+| LPC2148 | LED(Active Low) |
+|---|---|
+| P0.4 | Anode (+) of LED|
+| GND | Cathode (−) of LED |
+
 P0.4 LOW = device ON, P0.4 HIGH = device OFF.
 
 ### 4. Config switch (EINT0)
 
-```
-3.3 V ──[10 kΩ]──┬── P0.1 (EINT0)
-                 │
-              [switch]
-                 │
-                GND
-```
+<img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/fd49b5e0-cb19-4b9c-a268-8c0cd4c39019" />
+
+
+| LPC2148 | SWITCH (Active Low) |
+|---|---|
+| P0.1 | One terminal to SWITCH |
+| GND | Another terminal to SWITCH |
+
 Reads HIGH normally; pressing it pulls P0.1 LOW and fires the interrupt.
 
 ## 🏁 Getting Started
