@@ -22,7 +22,7 @@ the clock and a daily ON/OFF schedule. The board then switches a device
 - [Aim](#-aim)
 - [Objectives](#-objectives)
 - [Features](#-features)
-- [Block & Circuit Diagrams](#%EF%B8%8F-block--circuit-diagrams)
+- [Block & Hardware Conncetions](#%EF%B8%8F-block--circuit-diagrams)
 - [Hardware Requirements](#-hardware-requirements)
 - [Software Requirements](#-software-requirements)
 - [Pin Mapping](#-pin-mapping)
@@ -32,7 +32,6 @@ the clock and a daily ON/OFF schedule. The board then switches a device
 - [What You See on the LCD](#%EF%B8%8F-what-you-see-on-the-lcd)
 - [Menu System](#-menu-system)
 - [Keypad Guide](#%EF%B8%8F-keypad-guide)
-- [Schedule Logic](#%EF%B8%8F-schedule-logic)
 - [RTC PIN and Lockout](#-rtc-pin-and-lockout)
 - [Input Validation](#-input-validation)
 - [Time and Date Across Power-Off](#-time-and-date-across-power-off)
@@ -82,7 +81,8 @@ system on the LPC2148, with PIN-protected access to the clock settings.
 
 Two reference diagrams for this project:
 - **Block diagram** — functional view: power, MCU core, input, output, flash storage
-<img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/aa65790f-a4a8-438b-8a1f-65618fe217da" />
+<img width="2232" height="1356" alt="image" src="https://github.com/user-attachments/assets/17ead945-ef89-49ef-82ac-dcbcb0080502" />
+
 
 
 - **Circuit diagram** — pin-level view: LPC2148 to LCD, keypad, switch, device
@@ -133,6 +133,9 @@ Two reference diagrams for this project:
 ## 🔌 Circuit Connections
 
 ### 1. 16×2 LCD (HD44780)
+
+<img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/46799464-6ae1-491b-a372-0a81b0c9e305" />
+
 
 | LPC2148 | LCD pin |
 |---|---|
@@ -216,27 +219,161 @@ menu happens back in `main()`.
 
 ## 🖥️ What You See on the LCD
 
-**Run screen**, alternates every 3 s:
+**1. Run Screen**, alternates every 3 s:
 ```
-12:45:30 THU
-24/09/2026
+00:00:47 THU OFF
+SCHEDULE NOT SET
 ```
 ```
-12:45:30 THU
-09:00ON 17:00OFF
+RTC NOT SET
+PRESS SW TO SET
 ```
+<img width="321" height="157" alt="Screenshot 2026-09-29 200423" src="https://github.com/user-attachments/assets/65dfad52-1bae-407e-bca2-9aa401857291" />
+<img width="315" height="160" alt="Screenshot 2026-09-29 200013" src="https://github.com/user-attachments/assets/ff53ce1d-a873-4c30-a4a6-6c6c0bf6b075" />
 
-**Main menu** (after the config switch):
+**2. Main menu** (after the config switch):
 ```
 1:RTC 2:SCHD
 3:PIN 4:EXIT S:
 ```
+<img width="321" height="161" alt="Screenshot 2026-09-29 200305" src="https://github.com/user-attachments/assets/a8e9d2cd-dbc5-487b-9053-6e58e815ee6c" />
 
-**Field entry** (example: setting the hour):
+**3. For Field entry of RTC Before We need to Enter 4-Digit pin**:
+```
+ENTER RTC PIN-4D
+>1234_
+```
+<img width="311" height="167" alt="Screenshot 2026-09-29 200053" src="https://github.com/user-attachments/assets/323af62d-f2b9-45ce-84fd-53871f2b6d51" />
+
+**4. RTC will get locked (If we Enter invalid pin more the 3 times)**
+```            
+WRONG PIN 
+TRY AGAIN 
+```
+<img width="327" height="157" alt="Screenshot 2026-09-29 231124" src="https://github.com/user-attachments/assets/0ab88358-8914-490d-8a75-4669900f5a23" />
+              
+```            
+TOO MANY TRIES
+LOCKED 30 SEC
+```
+<img width="322" height="168" alt="Screenshot 2026-09-29 200325" src="https://github.com/user-attachments/assets/5bf5fb4a-bce1-4759-b389-081c19331721" />
+
+```            
+RTC LOCKED
+WAIT 27 SEC   _
+```
+<img width="316" height="161" alt="Screenshot 2026-09-29 231138" src="https://github.com/user-attachments/assets/e49ef06a-4986-41ec-aa7d-b30f5133cb9e" />
+
+**5. Update New RTC pin(We need to enter the previous pin to change)**
+```
+ENTER RTC PIN-4D
+>1234_
+```
+<img width="311" height="167" alt="Screenshot 2026-09-29 200053" src="https://github.com/user-attachments/assets/0e60bd8b-6dce-4deb-aea0-ad994687c2ea" />
+
+```
+NEW PIN(4 DIG)
+>1111_
+```
+<img width="313" height="166" alt="Screenshot 2026-09-29 200109" src="https://github.com/user-attachments/assets/edc708a9-b955-4e23-bd1b-4fd005e59f45" />
+
+```
+CONFIRM NEW PIN
+>1111_
+```
+<img width="316" height="165" alt="Screenshot 2026-09-29 200130" src="https://github.com/user-attachments/assets/507ecf73-a263-4a85-8183-4b6edc44c023" />
+
+```
+PIN CHANGED
+SUCCESSFULLY
+```
+<img width="321" height="167" alt="Screenshot 2026-09-29 200146" src="https://github.com/user-attachments/assets/3798a0bb-1bed-4186-bf05-8c56d3f9c8f8" />
+
+**6. Field entry of RTC(Enter the RTC pin and Enter the Filed's)**
 ```
 SET HOUR(0-23)
-> 10
+>
 ```
+
+<img width="326" height="167" alt="Screenshot 2026-09-29 201526" src="https://github.com/user-attachments/assets/5480efa8-4c5f-4292-9ebf-e38ae486d5c3" />
+
+```
+SET MIN(0-59)
+>
+```
+<img width="317" height="162" alt="Screenshot 2026-09-29 201608" src="https://github.com/user-attachments/assets/85ce6217-5947-4de1-b212-8a591c99ec28" />
+
+```
+SET SEC(0-59)
+>
+```
+<img width="317" height="162" alt="Screenshot 2026-09-29 201625" src="https://github.com/user-attachments/assets/01c5ddb9-691f-4c60-adcf-9fe0c0fb7f6e" />
+
+```
+DAY(0SUN/6-SAT)
+>
+```
+<img width="321" height="166" alt="Screenshot 2026-09-29 201642" src="https://github.com/user-attachments/assets/33f6c69e-5263-48b0-9670-9c7cde534a81" />
+
+```
+SET DATE(1-31)
+>
+```
+<img width="316" height="160" alt="Screenshot 2026-09-29 201656" src="https://github.com/user-attachments/assets/d719ceb4-b36b-4d46-832f-c8b7612d2e5b" />
+
+```
+SET MONTH(1-12)
+>
+```
+<img width="315" height="167" alt="Screenshot 2026-09-29 201746" src="https://github.com/user-attachments/assets/27849957-a04e-4a60-a2de-b800a847df6f" />
+
+```
+YEAR(2000-2030)
+>
+```
+<img width="320" height="162" alt="Screenshot 2026-09-29 201824" src="https://github.com/user-attachments/assets/86126515-a221-47bd-996f-48c7f238a832" />
+
+```
+RTC UPDATED
+SUCCESSFULLY
+```
+<img width="321" height="161" alt="Screenshot 2026-09-29 201848" src="https://github.com/user-attachments/assets/781f44f6-4eb2-437e-9650-6dc7ba8ce9d6" />
+
+**6. Schedule the RTC**
+```
+ONE HOUR(0-23)
+>_
+```
+<img width="321" height="158" alt="Screenshot 2026-09-29 201924" src="https://github.com/user-attachments/assets/14f84887-2503-443e-b45c-5db6d5d4a366" />
+
+```
+ONE MIN(0-59)
+>_
+```
+<img width="320" height="172" alt="Screenshot 2026-09-29 201942" src="https://github.com/user-attachments/assets/fd3d3dc0-26dd-4482-aae9-329e0fecb9e7" />
+
+```
+OFF HOUR(0-23)
+>_
+```
+<img width="338" height="161" alt="Screenshot 2026-09-29 201957" src="https://github.com/user-attachments/assets/aa624a21-9500-4b78-80ec-9a4f46f82d4a" />
+
+```
+OFF MIN(0-59)
+>_
+```
+<img width="322" height="175" alt="Screenshot 2026-09-29 202033" src="https://github.com/user-attachments/assets/55363d4f-3fa1-45ee-8914-f03658d33026" />
+
+
+
+
+
+
+
+
+
+
+
 
 ## 🎛️ Menu System
 
@@ -286,22 +423,6 @@ R3      C   0   =   +
 | `=` | Confirm the field — nothing is accepted until this is pressed |
 | `C` | Erase the last digit; on an empty field, cancels and re-prompts |
 | `/ * - +` | Not used by the current menu logic |
-
-## ⏱️ Schedule Logic
-
-- ON time is inclusive, OFF time is exclusive: `09:00 → 17:00` runs the
-  device from 09:00:00 to 16:59:59.
-- Same-day (ON < OFF): device ON when `now ≥ ON AND now < OFF`.
-- Overnight (ON > OFF): device ON when `now ≥ ON OR now < OFF`.
-  Example: `22:00 → 06:00` runs from 22:00 until 05:59 the next morning.
-- Identical ON/OFF times are rejected at entry.
-- Until both the RTC and a schedule are valid, the device stays OFF.
-
-```
-Hour       0  3  6  9  12 15 18 21
-Same-day   ░░░░░░░░░████████░░░░░░░   ON=09:00 OFF=17:00
-Overnight  ██████░░░░░░░░░░░░░░░░██   ON=22:00 OFF=06:00
-```
 
 ## 🔐 RTC PIN and Lockout
 
@@ -435,3 +556,6 @@ project/
 - UART logging of configuration changes.
 - External battery-backed RTC (e.g. DS1307) as a fallback.
 - Modular unit tests for the validation and schedule logic.
+  
+##  Author
+@Mohammad Hafeez
