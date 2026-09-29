@@ -82,9 +82,12 @@ system on the LPC2148, with PIN-protected access to the clock settings.
 
 Two reference diagrams for this project:
 - **Block diagram** — functional view: power, MCU core, input, output, flash storage
-- **Circuit diagram** — pin-level view: LPC2148 to LCD, keypad, switch, device
+  <img width="2232" height="1356" alt="image" src="https://github.com/user-attachments/assets/d190f319-ac4c-4fba-ad5f-f8152153c2ff" />
 
-(Generated separately — see `block_diagram.png` / `circuit_diagram.png`.)
+- **Circuit diagram** — pin-level view: LPC2148 to LCD, keypad, switch, device
+  <img width="1600" height="1045" alt="WhatsApp Image 2026-09-29 at 8 39 01 PM" src="https://github.com/user-attachments/assets/27253416-1344-41d5-9018-4edbecfc2525" />
+
+
 
 ## 🧩 Hardware Requirements
 
