@@ -75,7 +75,7 @@ Build a menu-driven RTC and scheduled device controller on the LPC2148, with PIN
   <tr>
     <td align="center"><img width="2064" height="1232" alt="image" src="https://github.com/user-attachments/assets/f2d9dd48-59b6-44d0-9231-1694cad5fda0" />
 <br><sub><b>Block diagram</b><br>Power, MCU, input, output, flash</sub></td>
-    <td align="center"><img width="1600" height="1045" alt="WhatsApp Image 2026-09-29 at 8 39 01 PM" src="https://github.com/user-attachments/assets/a661b26c-02d7-4a26-98d8-d29067818575" /><sub><b>Circuit diagram</b><br>Pin-level wiring</sub></td>
+    <td align="center"><img width="1600" height="1045" alt="WhatsApp Image 2026-09-29 at 8 39 01 PM" src="https://github.com/user-attachments/assets/a661b26c-02d7-4a26-98d8-d29067818575" /><sub><b>Hardware Connections</b><br>Pin-level wiring</sub></td>
   </tr>
 </table>
 
