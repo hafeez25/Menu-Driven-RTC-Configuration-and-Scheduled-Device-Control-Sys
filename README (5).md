@@ -12,11 +12,13 @@
 A 16×2 LCD shows the live date and time. A 4×4 keypad menu, **locked behind a 4-digit PIN**, lets you set the clock and a daily ON/OFF schedule. The board then switches a device (LED, relay, etc.) automatically.
 ## 📑Contents
 
+## 📑Contents
+
 [At a Glance](#at-a-glance) 
-· [Aim](#Aim) 
-· [Features](#Features) 
+· [Aim](#aim) 
+· [Features](#features) 
 · [Hardware](#hardware-required) 
-· [Block Diagram](#BlockDiagram)
+· [Block Diagrams](#block-diagrams)
 · [Pin Mapping](#pin-mapping) 
 · [Wiring](#circuit-connections) 
 · [Getting Started](#getting-started) 
@@ -31,12 +33,11 @@ A 16×2 LCD shows the live date and time. A 4×4 keypad menu, **locked behind a 
 · [Testing](#testing-checklist) 
 · [Troubleshooting](#troubleshooting) 
 · [Structure](#project-structure) 
+· [Source Overview](#source-code-overview)
 · [Specs](#technical-specifications) 
 · [Limitations](#known-limitations) 
 · [Future Work](#future-enhancements)
 · [Author](#author)
-
----
 
 ## 🚀 At a Glance
 
@@ -70,7 +71,7 @@ Build a menu-driven RTC and scheduled device controller on the LPC2148, with PIN
 | **Flash storage (optional)** | Schedule survives reset using IAP |
 | **Modular drivers** | Separate LCD, keypad, RTC, timer, interrupt and IAP modules |
 
-## Block Diagrams
+## 📐Block Diagrams
 
 <table>
   <tr>
