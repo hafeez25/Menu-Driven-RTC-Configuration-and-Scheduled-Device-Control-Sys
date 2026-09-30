@@ -10,14 +10,34 @@
 **Project ID:** V25HE11M13
 
 A 16×2 LCD shows the live date and time. A 4×4 keypad menu, **locked behind a 4-digit PIN**, lets you set the clock and a daily ON/OFF schedule. The board then switches a device (LED, relay, etc.) automatically.
-## Contents
+## 📑Contents
 
 [At a Glance](#at-a-glance) 
-· [Features](#features) · [Diagrams](#block-and-circuit-diagrams) · [Hardware](#hardware-required) · [Pin Mapping](#pin-mapping) · [Wiring](#circuit-connections) · [Getting Started](#getting-started) · [Firmware](#firmware-architecture) · [LCD Screens](#lcd-screens) · [Menu](#menu-system) · [Keypad](#keypad-guide) · [PIN & Lockout](#pin-and-lockout) · [Schedule Logic](#schedule-logic) · [Validation](#input-validation) · [Power-Off](#time-across-power-off) · [Testing](#testing-checklist) · [Troubleshooting](#troubleshooting) · [Structure](#project-structure) · [Specs](#technical-specifications) · [Limitations](#known-limitations) · [Future Work](#future-enhancements) · [Author](#author)
+· [Aim](#Aim) 
+· [Diagrams](#block-and-circuit-diagrams) 
+· [Hardware](#hardware-required) 
+· [Pin Mapping](#pin-mapping) 
+· [Wiring](#circuit-connections) 
+· [Getting Started](#getting-started) 
+· [Firmware](#firmware-architecture) 
+· [LCD Screens](#lcd-screens) 
+· [Menu](#menu-system) 
+· [Keypad](#keypad-guide) 
+· [PIN & Lockout](#pin-and-lockout) 
+· [Schedule Logic](#schedule-logic) 
+· [Validation](#input-validation) 
+· [Power-Off](#time-across-power-off) 
+· [Testing](#testing-checklist) 
+· [Troubleshooting](#troubleshooting) 
+· [Structure](#project-structure) 
+· [Specs](#technical-specifications) 
+· [Limitations](#known-limitations) 
+· [Future Work](#future-enhancements)
+· [Author](#author)
 
 ---
 
-## At a Glance
+## 🚀 At a Glance
 
 | | |
 |---|---|
@@ -28,11 +48,11 @@ A 16×2 LCD shows the live date and time. A 4×4 keypad menu, **locked behind a 
 | **Tools** | Embedded C · Keil µVision · Flash Magic |
 | **Code** | Multi-file: `main.c` + `rtc`, `KPM`, `LCD`, `eint`, `timer`, `iap`, `delay` drivers |
 
-## Aim
+## 🎯Aim
 
 Build a menu-driven RTC and scheduled device controller on the LPC2148, with PIN-protected access to the clock settings.
 
-## Features
+## ✨Features
 
 | Feature | Description |
 |---|---|
@@ -53,12 +73,13 @@ Build a menu-driven RTC and scheduled device controller on the LPC2148, with PIN
 
 <table>
   <tr>
-    <td align="center"><img src="images/block_diagram.png" width="420" alt="Block diagram"><br><sub><b>Block diagram</b><br>Power, MCU, input, output, flash</sub></td>
+    <td align="center"><img width="2064" height="1232" alt="image" src="https://github.com/user-attachments/assets/f2d9dd48-59b6-44d0-9231-1694cad5fda0" />
+<br><sub><b>Block diagram</b><br>Power, MCU, input, output, flash</sub></td>
     <td align="center"><img src="images/circuit_diagram.png" width="420" alt="Circuit diagram"><br><sub><b>Circuit diagram</b><br>Pin-level wiring</sub></td>
   </tr>
 </table>
 
-## Hardware Required
+## 🧩Hardware Required
 
 | Component | Notes | Qty |
 |---|---|---|
@@ -76,7 +97,7 @@ Build a menu-driven RTC and scheduled device controller on the LPC2148, with PIN
 
 **Software:** Keil µVision (compile/debug), Flash Magic (programming), `lpc21xx.h` (register definitions).
 
-## Pin Mapping
+## 📌Pin Mapping
 
 | Function | Pin | Direction | Notes |
 |---|---|---|---|
@@ -91,7 +112,7 @@ Build a menu-driven RTC and scheduled device controller on the LPC2148, with PIN
 
 > ⚠️ **P0.14 is also the ISP-entry pin.** The LCD uses P0.14 as data line D6. Make sure the LCD does not hold P0.14 LOW while the board resets, or it will enter ISP mode instead of running your program.
 
-## Circuit Connections
+## 🔌Circuit Connections
 
 ### 1. LCD (HD44780)
 
@@ -140,7 +161,7 @@ Reads HIGH normally. Pressing pulls P0.1 LOW and fires the interrupt.
 <p align="center"><img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/0c547ed8-a7c8-473a-8bef-e97d0f4fc452" />
 </p>
 
-## Getting Started
+## 🏁Getting Started
 
 1. **Get the files:** all `.c` / `.h` sources plus this README.
 2. **Wire the circuit** as shown above. Double-check LCD D0–D7 → P0.8–P0.15 and the keypad rows/columns.
@@ -172,7 +193,7 @@ Reads HIGH normally. Pressing pulls P0.1 LOW and fires the interrupt.
    | 6 | Choose `4` (Exit) | Run screen |
    | 7 | Wait 1 min, then 1 more | Device ON ✅, then OFF ✅ |
 
-## Firmware Architecture
+## 🧠Firmware Architecture
 
 ```
 ┌───────────────────────────────────────────────┐
@@ -216,7 +237,7 @@ flowchart TD
     I --> E
 ```
 
-## LCD Screens
+## 📺LCD Screens
 
 ### Run screen and menu
 
@@ -279,7 +300,7 @@ flowchart TD
   </tr>
 </table>
 
-## Menu System
+## 📋Menu System
 
 | Option | Function |
 |---|---|
@@ -319,14 +340,14 @@ R3      C   0   =   +
 | `C` | Erase the last digit; on an empty field, cancel and re-prompt |
 | `/` `*` `-` `+` | Not used |
 
-## PIN and Lockout
+## 🔐PIN and Lockout
 
 - Default PIN: **1234** (`RTC_PIN_DEFAULT` in `main.c`).
 - The PIN is needed to edit the RTC and to set a new PIN.
 - 3 wrong tries in a row lock RTC/PIN editing for **30 s**, with a live countdown. It unlocks by itself.
 - The PIN and lock state are stored in **RAM only**. A reset or power cycle sets the PIN back to `1234` and clears any lock.
 
-## Schedule Logic
+## 📅Schedule Logic
 
 - **ON is inclusive, OFF is exclusive.** ON 09:00, OFF 17:00 → device is ON from 09:00:00 to 16:59:59.
 - **Same-day (ON < OFF):** ON when `now ≥ ON` **and** `now < OFF`.
@@ -341,7 +362,7 @@ Overnight   ██████░░░░░░░░░░░░░░░░�
             █ = device ON   ░ = device OFF
 ```
 
-## Input Validation
+## ✅Input Validation
 
 | Field | Rule |
 |---|---|
@@ -355,18 +376,18 @@ Overnight   ██████░░░░░░░░░░░░░░░░�
 | PIN | Must match 4 digits; 3 wrong tries → 30 s lock |
 | Any field | Not saved until `=` is pressed; `C` fixes typos first |
 
-## Time Across Power-Off
+## 🔋Time Across Power-Off
 
 - RTC calendar registers sit in the LPC2148's **VBAT domain**. With a battery on VBAT they keep their value when the main supply is off, and `main()` will not overwrite a valid saved time at boot.
 - By default the RTC runs from PCLK, which stops when the board is off. The time is **kept but does not advance** while off.
 - For a clock that keeps running while off, fit a **32.768 kHz crystal** on RTCX1/RTCX2 and enable `#define USE_RTC_XTAL` in `rtc.c`.
 - With **no VBAT battery**, the registers are lost and the board falls back to `01/01/2026 00:00:00 THU`.
 
-## Testing Checklist
+## 🧪Testing Checklist
 
 | # | Test | Expected | Pass |
 |---|---|---|---|
-| 1 | Power on | Clock screen appears |  |
+| 1 | Power on | Clock screen appears | ☐ |
 | 2 | Wait a few seconds | Line 2 alternates date / schedule | ☐ |
 | 3 | Press config switch | Menu appears | ☐ |
 | 4 | Option 1, wrong PIN × 3 | RTC locks 30 s with countdown | ☐ |
@@ -381,7 +402,7 @@ Overnight   ██████░░░░░░░░░░░░░░░░�
 | 13 | Leave the menu idle 10 s | Returns to run screen | ☐ |
 | 14 | Power off and on (VBAT fitted) | Time and date unchanged | ☐ |
 
-## Troubleshooting
+## 🔧Troubleshooting
 
 | Problem | Check |
 |---|---|
@@ -396,7 +417,7 @@ Overnight   ██████░░░░░░░░░░░░░░░░�
 | Schedule lost after reset | `USE_IAP` is 0 in `iap.h` |
 | Board won't run after reset | P0.14 held LOW at reset (ISP entry) |
 
-## Project Structure
+## 📁Project Structure
 
 ```
 project/
@@ -414,7 +435,7 @@ project/
 └── images/                         # Screenshots and diagrams (lowercase folder name)
 ```
 
-## Source Code Overview
+## 🔍Source Code Overview
 
 | Function(s) | Purpose |
 |---|---|
@@ -430,7 +451,7 @@ project/
 | `InitTimer0`, `GetTicks`, `Elapsed` | 1 ms tick for timeouts and PIN lock |
 | `IAP_SaveSchedule`, `IAP_LoadSchedule` | Optional flash storage |
 
-## Technical Specifications
+## 📊Technical Specifications
 
 | Parameter | Value |
 |---|---|
@@ -445,14 +466,14 @@ project/
 | Schedule flash sector | Last user sector (14 @ 256 KB / 26 @ 512 KB), optional |
 | Programming | ISP via Flash Magic |
 
-## Known Limitations
+## 🚧Known Limitations
 
 - PIN and lock state are RAM-only and reset on power cycle.
 - Schedule storage (IAP) is off by default (`USE_IAP = 0`).
 - The RTC does not advance while powered off unless the 32.768 kHz crystal option is used.
 - One daily ON/OFF schedule only, with no per-weekday schedules.
 
-## Future Enhancements
+## 🔮Future Enhancements
 
 - Save the PIN to flash so it survives reset
 - Multiple or per-weekday schedules
@@ -460,6 +481,6 @@ project/
 - External battery-backed RTC (e.g. DS1307)
 - Unit tests for validation and schedule logic
 
-## Author
+## 👤Author
 
 **Mohammad Hafeez** · [@hafeez25](https://github.com/hafeez25)
