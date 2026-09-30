@@ -16,7 +16,7 @@ A 16×2 LCD shows the live date and time. A 4×4 keypad menu, **locked behind a 
 · [Aim](#aim) 
 · [Features](#features) 
 · [Hardware](#hardware-required) 
-· [Block Diagram and Hardware Connections](#block-diagram-and-hardware-connections)
+· [Block Diagram and Hardware Connections Image](#block-diagram-and-hardware-connections)
 · [Pin Mapping](#pin-mapping) 
 · [Wiring](#circuit-connections) 
 · [Getting Started](#getting-started) 
@@ -69,7 +69,7 @@ Build a menu-driven RTC and scheduled device controller on the LPC2148, with PIN
 | **Flash storage (optional)** | Schedule survives reset using IAP |
 | **Modular drivers** | Separate LCD, keypad, RTC, timer, interrupt and IAP modules |
 
-## 📐Block Diagrams
+## 📐Block Diagram and Hardware Connections
 
 <table>
   <tr>
