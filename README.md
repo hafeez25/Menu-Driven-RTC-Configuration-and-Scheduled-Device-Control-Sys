@@ -1,4 +1,4 @@
-# ⏰ PIN-Protected RTC Configuration & Scheduled Device Control
+# ⏰ Menu-Driven RTC Configuration and Scheduled Device Control System
 
 ![MCU](https://img.shields.io/badge/MCU-LPC2148-blue)
 ![Core](https://img.shields.io/badge/Core-ARM7TDMI--S-informational)
