@@ -111,7 +111,9 @@ Build a menu-driven RTC and scheduled device controller on the LPC2148, with PIN
 | P0.18 | EN |
 | 10 kΩ pot wiper | V0 (contrast) |
 
-<p align="center"><img src="images/circuit_lcd.png" width="520" alt="LCD wiring"></p>
+<p align="center"><img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/b65d271a-f164-4563-a80c-87b8493d6911" />
+
+</p>
 
 ### 2. Keypad
 
@@ -120,19 +122,19 @@ Build a menu-driven RTC and scheduled device controller on the LPC2148, with PIN
 | P1.16 – P1.19 | Rows R0 – R3 |
 | P1.20 – P1.23 | Columns C0 – C3 |
 
-<p align="center"><img src="images/circuit_keypad.png" width="520" alt="Keypad wiring"></p>
+<p align="center"><img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/df0e1a6c-6e80-4c56-bd15-1601b5234ef4" alt="Keypad wiring"></p>
 
 ### 3. Device output (active LOW)
 
 The device turns ON when P0.4 goes LOW, so the LED is wired between 3.3 V and P0.4:
 
-```
-3.3 V ──[330 Ω]──(LED anode → cathode)── P0.4
-```
+| LPC2148 | Active Low Switch |
+|---|---|
+| P0.4 | Anode(+) of LED |
+| GND | Cathode(-) of LED |
 
-`P0.4 LOW` → device ON · `P0.4 HIGH` → device OFF
-
-<p align="center"><img src="images/circuit_device.png" width="520" alt="Device wiring"></p>
+<p align="center"><img width="1824" height="1248" alt="image" src="https://github.com/user-attachments/assets/e9589ba9-d36a-4256-b5db-7559d88ed882" />
+</p>
 
 ### 4. Config switch (EINT0)
 
@@ -143,7 +145,8 @@ The device turns ON when P0.4 goes LOW, so the LED is wired between 3.3 V and P0
 
 Reads HIGH normally. Pressing pulls P0.1 LOW and fires the interrupt.
 
-<p align="center"><img src="images/circuit_switch.png" width="520" alt="Switch wiring"></p>
+<p align="center"><img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/0c547ed8-a7c8-473a-8bef-e97d0f4fc452" />
+</p>
 
 ## Getting Started
 
@@ -371,7 +374,7 @@ Overnight   ██████░░░░░░░░░░░░░░░░�
 
 | # | Test | Expected | Pass |
 |---|---|---|---|
-| 1 | Power on | Clock screen appears | ☐ |
+| 1 | Power on | Clock screen appears |  |
 | 2 | Wait a few seconds | Line 2 alternates date / schedule | ☐ |
 | 3 | Press config switch | Menu appears | ☐ |
 | 4 | Option 1, wrong PIN × 3 | RTC locks 30 s with countdown | ☐ |
