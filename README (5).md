@@ -7,7 +7,6 @@
 ![Programmer](https://img.shields.io/badge/Programmer-Flash%20Magic-lightgrey)
 ![Status](https://img.shields.io/badge/Status-Working-success)
 
-**Project ID:** V25HE11M13
 
 A 16×2 LCD shows the live date and time. A 4×4 keypad menu, **locked behind a 4-digit PIN**, lets you set the clock and a daily ON/OFF schedule. The board then switches a device (LED, relay, etc.) automatically.
 
@@ -17,7 +16,7 @@ A 16×2 LCD shows the live date and time. A 4×4 keypad menu, **locked behind a 
 · [Aim](#aim) 
 · [Features](#features) 
 · [Hardware](#hardware-required) 
-· [Block Diagrams](#block-diagrams)
+· [Block Diagram and Hardware Connections](#block-diagram-and-hardware-connections)
 · [Pin Mapping](#pin-mapping) 
 · [Wiring](#circuit-connections) 
 · [Getting Started](#getting-started) 
@@ -76,7 +75,7 @@ Build a menu-driven RTC and scheduled device controller on the LPC2148, with PIN
   <tr>
     <td align="center"><img width="2064" height="1232" alt="image" src="https://github.com/user-attachments/assets/f2d9dd48-59b6-44d0-9231-1694cad5fda0" />
 <br><sub><b>Block diagram</b><br>Power, MCU, input, output, flash</sub></td>
-    <td align="center"><img src="images/circuit_diagram.png" width="420" alt="Circuit diagram"><br><sub><b>Circuit diagram</b><br>Pin-level wiring</sub></td>
+    <td align="center"><img width="1600" height="1045" alt="WhatsApp Image 2026-09-29 at 8 39 01 PM" src="https://github.com/user-attachments/assets/a661b26c-02d7-4a26-98d8-d29067818575" /><sub><b>Circuit diagram</b><br>Pin-level wiring</sub></td>
   </tr>
 </table>
 
