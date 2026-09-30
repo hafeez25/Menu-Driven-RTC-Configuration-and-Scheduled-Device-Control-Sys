@@ -10,7 +10,6 @@
 **Project ID:** V25HE11M13
 
 A 16×2 LCD shows the live date and time. A 4×4 keypad menu, **locked behind a 4-digit PIN**, lets you set the clock and a daily ON/OFF schedule. The board then switches a device (LED, relay, etc.) automatically.
-## 📑Contents
 
 ## 📑Contents
 
