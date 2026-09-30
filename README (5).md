@@ -227,9 +227,9 @@ flowchart TD
 
 <table>
   <tr>
-    <td align="center"><img src="images/run_screen_1.png" width="260" alt="Run screen"><br><sub><b>Run screen</b><br><code>00:00:47 THU OFF</code><br><code>SCHEDULE NOT SET</code></sub></td>
-    <td align="center"><img src="images/run_screen_2.png" width="260" alt="Run screen, RTC not set"><br><sub><b>RTC not set</b><br><code>RTC NOT SET</code><br><code>PRESS SW TO SET</code></sub></td>
-    <td align="center"><img src="images/main_menu.png" width="260" alt="Main menu"><br><sub><b>Main menu</b><br><code>1:RTC 2:SCHD</code><br><code>3:PIN 4:EXIT</code></sub></td>
+    <td align="center"><img width="321" height="157" alt="Screenshot 2026-09-29 200423" src="https://github.com/user-attachments/assets/b7d065f6-0d01-4885-bfea-f1ae485fb5cb"/><br><sub><b>Run screen</b><br><code>00:00:47 THU OFF</code><br><code>SCHEDULE NOT SET</code></sub></td>
+    <td align="center"><img width="315" height="160" alt="Screenshot 2026-09-29 200013" src="https://github.com/user-attachments/assets/26a4cfcc-6b67-40cf-a9b5-106285bf9a0c" /><br><sub><b>RTC not set</b><br><code>RTC NOT SET</code><br><code>PRESS SW TO SET</code></sub></td>
+    <td align="center"><img width="307" height="155" alt="Screenshot 2026-09-29 200032" src="https://github.com/user-attachments/assets/b0dbcc1e-f769-4a65-9518-4babb603af6b" /><br><sub><b>Main menu</b><br><code>1:RTC 2:SCHD</code><br><code>3:PIN 4:EXIT</code></sub></td>
   </tr>
 </table>
 
@@ -237,12 +237,12 @@ flowchart TD
 
 <table>
   <tr>
-    <td align="center"><img src="images/pin_entry.png" width="230" alt="PIN entry"><br><sub><b>PIN entry</b><br><code>ENTER RTC PIN-4D</code></sub></td>
-    <td align="center"><img src="images/wrong_pin.png" width="230" alt="Wrong PIN"><br><sub><b>Wrong PIN</b><br><code>WRONG PIN / TRY AGAIN</code></sub></td>
+    <td align="center"><img width="311" height="167" alt="Screenshot 2026-09-29 200053" src="https://github.com/user-attachments/assets/7f156742-dc03-41d7-a698-62f5765b4271" /><br><sub><b>PIN entry</b><br><code>ENTER RTC PIN-4D</code></sub></td>
+    <td align="center"><img width="327" height="157" alt="Screenshot 2026-09-29 231124" src="https://github.com/user-attachments/assets/16846b81-6bea-4468-acbf-e6d51d0b269f" /><br><sub><b>Wrong PIN</b><br><code>WRONG PIN / TRY AGAIN</code></sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="images/locked.png" width="230" alt="Locked"><br><sub><b>Locked</b><br><code>TOO MANY TRIES / LOCKED 30 SEC</code></sub></td>
-    <td align="center"><img src="images/lock_countdown.png" width="230" alt="Lock countdown"><br><sub><b>Countdown</b><br><code>RTC LOCKED / WAIT 27 SEC</code></sub></td>
+    <td align="center"><img width="322" height="168" alt="Screenshot 2026-09-29 200325" src="https://github.com/user-attachments/assets/eba67417-105d-4827-8717-d43810a2d20e" /><br><sub><b>Locked</b><br><code>TOO MANY TRIES / LOCKED 30 SEC</code></sub></td>
+    <td align="center"><img width="316" height="161" alt="Screenshot 2026-09-29 231138" src="https://github.com/user-attachments/assets/5fa06a6c-6caf-4bca-9c9d-482422acde1a" /><br><sub><b>Countdown</b><br><code>RTC LOCKED / WAIT 27 SEC</code></sub></td>
   </tr>
 </table>
 
@@ -250,9 +250,9 @@ flowchart TD
 
 <table>
   <tr>
-    <td align="center"><img src="images/new_pin.png" width="230" alt="New PIN"><br><sub><b>New PIN</b><br><code>NEW PIN(4 DIG)</code></sub></td>
-    <td align="center"><img src="images/confirm_pin.png" width="230" alt="Confirm PIN"><br><sub><b>Confirm</b><br><code>CONFIRM NEW PIN</code></sub></td>
-    <td align="center"><img src="images/pin_changed.png" width="230" alt="PIN changed"><br><sub><b>Done</b><br><code>PIN CHANGED SUCCESSFULLY</code></sub></td>
+    <td align="center"><img width="313" height="166" alt="Screenshot 2026-09-29 200109" src="https://github.com/user-attachments/assets/e04434ee-c5b5-4053-b556-09c0ab7107c6" /><br><sub><b>New PIN</b><br><code>NEW PIN(4 DIG)</code></sub></td>
+    <td align="center"><img width="316" height="165" alt="Screenshot 2026-09-29 200130" src="https://github.com/user-attachments/assets/f5fa5f21-a13b-4a5a-959d-60e83dc6a223" /><br><sub><b>Confirm</b><br><code>CONFIRM NEW PIN</code></sub></td>
+    <td align="center"><img width="321" height="167" alt="Screenshot 2026-09-29 200146" src="https://github.com/user-attachments/assets/db0e6f28-c456-4e43-b0a2-8ede67d952e2" /><br><sub><b>Done</b><br><code>PIN CHANGED SUCCESSFULLY</code></sub></td>
   </tr>
 </table>
 
@@ -260,16 +260,16 @@ flowchart TD
 
 <table>
   <tr>
-    <td align="center"><img src="images/set_hour.png" width="200" alt="Set hour"><br><sub><b>Hour</b> (0-23)</sub></td>
-    <td align="center"><img src="images/set_min.png" width="200" alt="Set minute"><br><sub><b>Minute</b> (0-59)</sub></td>
-    <td align="center"><img src="images/set_sec.png" width="200" alt="Set second"><br><sub><b>Second</b> (0-59)</sub></td>
-    <td align="center"><img src="images/set_day.png" width="200" alt="Set day"><br><sub><b>Day</b> (0 SUN - 6 SAT)</sub></td>
+    <td align="center"><img width="326" height="167" alt="Screenshot 2026-09-29 201526" src="https://github.com/user-attachments/assets/7f36e6b4-6f60-448b-8be9-cfe0fbf8d0cb" /><br><sub><b>Hour</b> (0-23)</sub></td>
+    <td align="center"><img width="317" height="162" alt="Screenshot 2026-09-29 201608" src="https://github.com/user-attachments/assets/3f47d921-b9b9-475d-9c65-b8555d425076" /><br><sub><b>Minute</b> (0-59)</sub></td>
+    <td align="center"><img width="317" height="162" alt="Screenshot 2026-09-29 201625" src="https://github.com/user-attachments/assets/523a3744-e4de-4cd0-becc-c75763184a63" /><br><sub><b>Second</b> (0-59)</sub></td>
+    <td align="center"><img width="321" height="166" alt="Screenshot 2026-09-29 201642" src="https://github.com/user-attachments/assets/0d8a2dfb-6702-4485-870a-aef783554f90" /><br><sub><b>Day</b> (0 SUN - 6 SAT)</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="images/set_date.png" width="200" alt="Set date"><br><sub><b>Date</b> (1-31)</sub></td>
-    <td align="center"><img src="images/set_month.png" width="200" alt="Set month"><br><sub><b>Month</b> (1-12)</sub></td>
-    <td align="center"><img src="images/set_year.png" width="200" alt="Set year"><br><sub><b>Year</b> (2000-2030)</sub></td>
-    <td align="center"><img src="images/rtc_updated.png" width="200" alt="RTC updated"><br><sub><b>Saved</b><br><code>RTC UPDATED</code></sub></td>
+    <td align="center"><img width="316" height="160" alt="Screenshot 2026-09-29 201656" src="https://github.com/user-attachments/assets/96b2a844-4271-44ea-8e21-45fcfd421421" /><br><sub><b>Date</b> (1-31)</sub></td>
+    <td align="center"><img width="315" height="167" alt="Screenshot 2026-09-29 201746" src="https://github.com/user-attachments/assets/47a5365d-03cc-4523-9f69-462d1a3112e2" /><br><sub><b>Month</b> (1-12)</sub></td>
+    <td align="center"><img width="320" height="162" alt="Screenshot 2026-09-29 201824" src="https://github.com/user-attachments/assets/a705f733-0e09-445d-a55f-9eb2b66e459a" /><br><sub><b>Year</b> (2000-2030)</sub></td>
+    <td align="center"><img width="321" height="161" alt="Screenshot 2026-09-29 201848" src="https://github.com/user-attachments/assets/f38809ee-19b7-4258-ae01-93872648df28" /><br><sub><b>Saved</b><br><code>RTC UPDATED</code></sub></td>
   </tr>
 </table>
 
@@ -277,10 +277,10 @@ flowchart TD
 
 <table>
   <tr>
-    <td align="center"><img src="images/on_hour.png" width="200" alt="ON hour"><br><sub><b>ON hour</b> (0-23)</sub></td>
-    <td align="center"><img src="images/on_min.png" width="200" alt="ON minute"><br><sub><b>ON minute</b> (0-59)</sub></td>
-    <td align="center"><img src="images/off_hour.png" width="200" alt="OFF hour"><br><sub><b>OFF hour</b> (0-23)</sub></td>
-    <td align="center"><img src="images/off_min.png" width="200" alt="OFF minute"><br><sub><b>OFF minute</b> (0-59)</sub></td>
+    <td align="center"><img width="321" height="158" alt="Screenshot 2026-09-29 201924" src="https://github.com/user-attachments/assets/74b7b411-73e2-4b0c-b5ee-cbef52896f74" /><br><sub><b>ON hour</b> (0-23)</sub></td>
+    <td align="center"><img width="320" height="172" alt="Screenshot 2026-09-29 201942" src="https://github.com/user-attachments/assets/67e5dc08-c524-41fc-bd36-8e12e0fa6983" /><br><sub><b>ON minute</b> (0-59)</sub></td>
+    <td align="center"><img width="338" height="161" alt="Screenshot 2026-09-29 201957" src="https://github.com/user-attachments/assets/35b79b88-7bbc-47d3-a67b-6d2e11e94149" /><br><sub><b>OFF hour</b> (0-23)</sub></td>
+    <td align="center"><img width="322" height="175" alt="Screenshot 2026-09-29 202033" src="https://github.com/user-attachments/assets/dfa06efb-4371-4187-a427-54581c6c5480" /><br><sub><b>OFF minute</b> (0-59)</sub></td>
   </tr>
 </table>
 
