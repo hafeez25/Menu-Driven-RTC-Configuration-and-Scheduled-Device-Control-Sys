@@ -10,18 +10,10 @@
 **Project ID:** V25HE11M13
 
 A 16×2 LCD shows the live date and time. A 4×4 keypad menu, **locked behind a 4-digit PIN**, lets you set the clock and a daily ON/OFF schedule. The board then switches a device (LED, relay, etc.) automatically.
-
-<p align="center">
-  <img src="images/run_screen_1.png" width="280" alt="Run screen showing time and device status">
-  &nbsp;&nbsp;
-  <img src="images/main_menu.png" width="280" alt="Main menu on the LCD">
-</p>
-
----
-
 ## Contents
 
-[At a Glance](#at-a-glance) · [Features](#features) · [Diagrams](#block-and-circuit-diagrams) · [Hardware](#hardware-required) · [Pin Mapping](#pin-mapping) · [Wiring](#circuit-connections) · [Getting Started](#getting-started) · [Firmware](#firmware-architecture) · [LCD Screens](#lcd-screens) · [Menu](#menu-system) · [Keypad](#keypad-guide) · [PIN & Lockout](#pin-and-lockout) · [Schedule Logic](#schedule-logic) · [Validation](#input-validation) · [Power-Off](#time-across-power-off) · [Testing](#testing-checklist) · [Troubleshooting](#troubleshooting) · [Structure](#project-structure) · [Specs](#technical-specifications) · [Limitations](#known-limitations) · [Future Work](#future-enhancements) · [Author](#author)
+[At a Glance](#at-a-glance) 
+· [Features](#features) · [Diagrams](#block-and-circuit-diagrams) · [Hardware](#hardware-required) · [Pin Mapping](#pin-mapping) · [Wiring](#circuit-connections) · [Getting Started](#getting-started) · [Firmware](#firmware-architecture) · [LCD Screens](#lcd-screens) · [Menu](#menu-system) · [Keypad](#keypad-guide) · [PIN & Lockout](#pin-and-lockout) · [Schedule Logic](#schedule-logic) · [Validation](#input-validation) · [Power-Off](#time-across-power-off) · [Testing](#testing-checklist) · [Troubleshooting](#troubleshooting) · [Structure](#project-structure) · [Specs](#technical-specifications) · [Limitations](#known-limitations) · [Future Work](#future-enhancements) · [Author](#author)
 
 ---
 
