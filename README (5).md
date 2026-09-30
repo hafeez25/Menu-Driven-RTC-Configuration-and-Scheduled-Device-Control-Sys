@@ -12,7 +12,7 @@ A 16×2 LCD shows the live date and time. A 4×4 keypad menu, **locked behind a 
 
 ## 📑Contents
 
-[At a Glance](#at-a-glance) 
+· [At a Glance](#at-a-glance) 
 · [Aim](#aim) 
 · [Features](#features) 
 · [Hardware](#hardware-required) 
